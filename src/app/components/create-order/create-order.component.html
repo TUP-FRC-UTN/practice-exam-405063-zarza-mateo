@@ -1,0 +1,76 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="clientData">
+    <h3>Datos del Cliente</h3>
+
+    <div>
+      <label>Nombre:</label>
+      <input type="text" formControlName="name" />
+      <div *ngIf="clientName?.errors?.['required'] && clientName?.touched">
+        El nombre es requerido
+      </div>
+      <div *ngIf="clientName?.errors?.['minlength'] && clientName?.touched">
+        El nombre debe tener al menos 3 caracteres
+      </div>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+      <div *ngIf="clientEmail?.errors?.['required'] && clientEmail?.touched">
+        El email es requerido
+      </div>
+      <div *ngIf="clientEmail?.errors?.['email'] && clientEmail?.touched">
+        Introduce un email válido
+      </div>
+    </div>
+  </div>
+
+  <h3>Productos</h3>
+  <div formArrayName="products">
+    <div
+      *ngFor="let product of productsFormArray.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <div>
+        <label>Producto:</label>
+        <select formControlName="productId" (change)="onProductSelect(i)">
+          <option value="">Selecciona un producto</option>
+          <option *ngFor="let prod of products" [value]="prod.id">
+            {{ prod.name }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label>Cantidad:</label>
+        <input type="number" formControlName="quantity" />
+        <div *ngIf="getProductControl(i, 'quantity')?.errors?.['required']">
+          La cantidad es requerida
+        </div>
+        <div *ngIf="getProductControl(i, 'quantity')?.errors?.['min']">
+          La cantidad debe ser mayor a 0
+        </div>
+        <div *ngIf="getProductControl(i, 'quantity')?.errors?.['max']">
+          La cantidad excede el stock disponible
+        </div>
+      </div>
+
+      <div>
+        <label>Precio:</label>
+        <input type="number" formControlName="price" readonly />
+      </div>
+
+      <div>
+        <label>Stock Disponible:</label>
+        <input type="number" formControlName="stock" readonly />
+      </div>
+
+      <button type="button" (click)="removeProduct(i)">
+        Eliminar Producto
+      </button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addProduct()">Agregar Producto</button>
+  <button type="submit" [disabled]="!orderForm.valid">Enviar Pedido</button>
+</form>
