@@ -3,7 +3,7 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
 import { OrdersComponent } from './components/orders/orders.component';
 
 export const routes: Routes = [
-    { path: "create-order",  component : CreateOrderComponent },
-    { path: "orders",  component : OrdersComponent },
-
+  { path: 'create-order', component: CreateOrderComponent },
+  { path: 'orders', component: OrdersComponent },
+  { path: '', redirectTo: '/create-order', pathMatch: 'full' },
 ];
