@@ -1,100 +1,232 @@
 {
-    "products": [
-      {
-        "id": "1",
-        "name": "Laptop Gaming Pro",
-        "price": 999.99,
-        "stock": 50
-      },
-      {
-        "id": "2",
-        "name": "Smartphone X12",
-        "price": 699.99,
-        "stock": 100
-      },
-      {
-        "id": "3",
-        "name": "Tablet Air",
-        "price": 449.99,
-        "stock": 75
-      },
-      {
-        "id": "4",
-        "name": "Smart Watch V4",
-        "price": 199.99,
-        "stock": 120
-      }
-    ],
-    "orders": [
-      {
-        "id": "1586",
-        "customerName": "juan Perez",
-        "email": "juanP@gmail.com",
-        "products": [
-          {
-            "productId": "1",
-            "quantity": 1,
-            "stock": 50,
-            "price": 999.99
-          }
-        ],
-        "total": 999.99,
-        "orderCode": "J.com065049",
-        "timestamp": "2024-10-28T14:51:05.049Z"
-      },
-      {
-        "id": "3db1",
-        "customerName": "juan perez",
-        "email": "juanP@gmail.com",
-        "products": [
-          {
-            "productId": "2",
-            "quantity": 1,
-            "stock": 100,
-            "price": 699.99
-          }
-        ],
-        "total": 699.99,
-        "orderCode": "J.com079946",
-        "timestamp": "2024-10-28T14:51:19.946Z"
-      },
-      {
-        "id": "3b59",
-        "customerName": "juan perez",
-        "email": "juanP@gmail.com",
-        "products": [
-          {
-            "productId": "2",
-            "quantity": 1,
-            "stock": 100,
-            "price": 699.99
-          }
-        ],
-        "total": 699.99,
-        "orderCode": "J.com097957",
-        "timestamp": "2024-10-28T14:51:37.957Z"
-      },
-      {
-        "id": "0f2c",
-        "customerName": "Luis Gigena",
-        "email": "luisG@gmail.com",
-        "products": [
-          {
-            "productId": "1",
-            "quantity": 1,
-            "stock": 50,
-            "price": 999.99
-          },
-          {
-            "productId": "2",
-            "quantity": 1,
-            "stock": 100,
-            "price": 699.99
-          }
-        ],
-        "total": 1529.982,
-        "orderCode": "L.com222249",
-        "timestamp": "2024-10-28T14:53:42.249Z"
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Gaming Pro",
+      "price": 999.99,
+      "stock": 50
+    },
+    {
+      "id": "2",
+      "name": "Smartphone X12",
+      "price": 699.99,
+      "stock": 100
+    },
+    {
+      "id": "3",
+      "name": "Tablet Air",
+      "price": 449.99,
+      "stock": 75
+    },
+    {
+      "id": "4",
+      "name": "Smart Watch V4",
+      "price": 199.99,
+      "stock": 120
+    }
+  ],
+  "orders": [
+    {
+      "id": "1586",
+      "customerName": "juan Perez",
+      "email": "juanP@gmail.com",
+      "products": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "stock": 50,
+          "price": 999.99
+        }
+      ],
+      "total": 999.99,
+      "orderCode": "J.com065049",
+      "timestamp": "2024-10-28T14:51:05.049Z"
+    },
+    {
+      "id": "3db1",
+      "customerName": "juan perez",
+      "email": "juanP@gmail.com",
+      "products": [
+        {
+          "productId": "2",
+          "quantity": 1,
+          "stock": 100,
+          "price": 699.99
+        }
+      ],
+      "total": 699.99,
+      "orderCode": "J.com079946",
+      "timestamp": "2024-10-28T14:51:19.946Z"
+    },
+    {
+      "id": "3b59",
+      "customerName": "juan perez",
+      "email": "juanP@gmail.com",
+      "products": [
+        {
+          "productId": "2",
+          "quantity": 1,
+          "stock": 100,
+          "price": 699.99
+        }
+      ],
+      "total": 699.99,
+      "orderCode": "J.com097957",
+      "timestamp": "2024-10-28T14:51:37.957Z"
+    },
+    {
+      "id": "0f2c",
+      "customerName": "Luis Gigena",
+      "email": "luisG@gmail.com",
+      "products": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "stock": 50,
+          "price": 999.99
+        },
+        {
+          "productId": "2",
+          "quantity": 1,
+          "stock": 100,
+          "price": 699.99
+        }
+      ],
+      "total": 1529.982,
+      "orderCode": "L.com222249",
+      "timestamp": "2024-10-28T14:53:42.249Z"
+    },
+    {
+      "id": "bc1b",
+      "nombre": "mateo",
+      "email": "test@pinga.com",
+      "productos": [
+        {
+          "selectedProduct": "Smartphone X12",
+          "cantidad": 2
+        }
+      ]
+    },
+    {
+      "id": "fb05",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "b22c",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 2
+        }
+      ]
+    },
+    {
+      "id": "1d10",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 3
+        }
+      ]
+    },
+    {
+      "id": "7f69",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 4
+        }
+      ]
+    },
+    {
+      "id": "5fcd",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 5
+        }
+      ]
+    },
+    {
+      "id": "c386",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 6
+        }
+      ]
+    },
+    {
+      "id": "0d83",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 7
+        }
+      ]
+    },
+    {
+      "id": "1cbb",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 8
+        }
+      ]
+    },
+    {
+      "id": "ab09",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 9
+        }
+      ]
+    },
+    {
+      "id": "0914",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 10
+        }
+      ]
+    },
+    {
+      "id": "d6e8",
+      "nombre": "testo",
+      "email": "testeo@posta.si",
+      "productos": [
+        {
+          "selectedProduct": "Laptop Gaming Pro",
+          "cantidad": 9
+        }
+      ]
+    }
+  ]
+}

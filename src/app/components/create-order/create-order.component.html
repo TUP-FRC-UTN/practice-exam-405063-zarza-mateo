@@ -39,26 +39,38 @@
         } @if (form.controls['email'].errors?.['email']) {
         <div class="text-danger">debe tener formato email</div>
         } }
-      </div>
-      <div class="col-md-2 mb-3 mt-4">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="agregarProducto()"
-        >
-          + producto
-        </button>
+
+        @if (form.controls['email'].errors?.['orderLimit']) {
+          <div class="text-danger">Ha superado su límite de 3 pedidos</div>
+
+        }
+
+
       </div>
     </div>
 
     <!-- Lista de Productos -->
-    <div formArrayName="productos">
+    <div formArrayName="productos" class="card p-3 mb-3">
+      <div class="row justify-content-end">
+        <button
+          type="button"
+          class="btn btn-primary col-1"
+          (click)="agregarProducto()"
+          [disabled]="productos.length === 3"
+        >
+          Agregar + <i class="bi bi-plus-circle"></i>
+        </button>
+      </div>
+
       @if (productos.errors?.['duplicateProduct']) {
-        <div class="alert alert-danger">
-          No se pueden agregar productos duplicados
-        </div>
-      }
-      @for (producto of productos.controls; track $index) {
+      <div class="alert alert-danger">
+        No se pueden agregar productos duplicados
+      </div>
+      } @if (productos.errors?.['maxAmount']) {
+      <div class="alert alert-danger">
+        No se pueden agregar mas de 10 productos
+      </div>
+      } @for (producto of productos.controls; track producto) {
       <div [formGroupName]="$index" class="row mb-3">
         <div class="col-md-3 mb-2">
           <label class="form-label">Producto</label>
@@ -87,6 +99,8 @@
             formControlName="cantidad"
             type="number"
             class="form-control"
+            [min]="1"
+            [max]="10"
           />
         </div>
 
@@ -125,7 +139,7 @@
 
     <!-- Resumen de Productos -->
     <div class="row">
-      <div formArrayName="productos" class="bg-primary p-3 text-white mb-3">
+      <div formArrayName="productos" class="p-3 card mb-3">
         @for (producto of productos.controls; track $index) {
         <div [formGroupName]="$index" class="row mb-2">
           <div class="col">
@@ -153,5 +167,13 @@
         />
       </div>
     </div>
+    <button
+      type="submit"
+      [disabled]="productos.length === 0 || productos.errors?.['maxTotalProducts'] || !form.valid"
+      class="btn btn-primary"
+      (click)="submit()"
+    >
+      Enviar
+    </button>
   </form>
 </div>
